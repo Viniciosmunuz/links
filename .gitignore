@@ -1,0 +1,15 @@
+# SO
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# editores
+.vscode/
+.idea/
+
+# nada aqui usa npm, mas se um dia usar
+node_modules/
+npm-debug.log*
+
+# config de ferramenta local, mesma categoria de .vscode/
+.claude/
