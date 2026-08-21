@@ -206,10 +206,14 @@ a { color: inherit; }
 .stats {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 1fr;
+  /* minmax(0, 1fr) e NÃO 1fr: com 1fr a coluna não encolhe abaixo do conteúdo,
+     e um rótulo comprido estica o grid, o container e corta a página inteira
+     na horizontal (o body tem overflow-x: hidden, então nem rola — só some). */
+  grid-auto-columns: minmax(0, 1fr);
   gap: 10px;
 }
 .stat {
+  min-width: 0;                     /* idem: sem isso o item do grid não encolhe */
   display: flex; flex-direction: column; align-items: center; gap: 7px;
   text-decoration: none;
   transition: transform .2s ease;
@@ -223,7 +227,15 @@ a { color: inherit; }
   box-shadow: 0 10px 22px -12px rgba(0, 0, 0, .8);
 }
 .stat__badge svg { width: 22px; height: 22px; }
-.stat__value { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.stat__value {
+  max-width: 100%;
+  font-size: 12.5px; font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+@media (max-width: 380px) {
+  .stat__value { font-size: 11.5px; }
+}
 
 /* =========================================================
    LINKS — grid bento (6 colunas)
@@ -337,9 +349,37 @@ a { color: inherit; }
   color: var(--muted);
 }
 
+/* ---------- seta de "tem mais coisa abaixo" ---------- */
+.scroll-hint {
+  position: fixed;
+  left: 50%; bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 25;
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: color-mix(in srgb, var(--surface-flat) 82%, transparent);
+  backdrop-filter: blur(14px);
+  color: var(--text);
+  cursor: pointer;
+  animation: hintBob 1.9s ease-in-out infinite;
+  transition: opacity .45s ease, visibility .45s;
+}
+.scroll-hint.is-gone {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@keyframes hintBob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50%      { transform: translate(-50%, 7px); }
+}
+
 .toast {
   position: fixed;
-  left: 50%; bottom: 26px;
+  /* acima da seta, que ocupa de 20px a 60px do rodapé */
+  left: 50%; bottom: calc(78px + env(safe-area-inset-bottom));
   transform: translate(-50%, 20px);
   padding: 11px 20px;
   border-radius: 999px;
@@ -371,8 +411,20 @@ a { color: inherit; }
   border-radius: 6px;
 }
 
+/* Em tela estreita cada coluna do bento fica com ~43px, e aí 4+2 na mesma
+   linha não funciona mais. Vira grid de 2 colunas: tudo que era 4 ou 2 passa
+   a 3, então os pares fecham certinho (3+3) e o GitHub segue largura cheia.
+   Cuidado ao mexer: 4+3 = 7 numa grade de 6 joga cada card numa linha solta. */
+@media (max-width: 400px) {
+  .link[data-span="2"],
+  .link[data-span="4"] { grid-column: span 3; }
+  /* meia largura aqui dá ~122px úteis; 10.5px é o que faz o endereço de
+     email caber inteiro em vez de sair reticente */
+  .link__sub,
+  .link[data-span="2"] .link__sub { font-size: 10.5px; letter-spacing: 0; }
+}
+
 @media (max-width: 360px) {
-  .link[data-span="2"] { grid-column: span 3; }
   .profile__avatar { width: 150px; height: 150px; border-radius: 36px; }
   .profile { padding-top: 92px; }
   .profile__card { padding-top: 80px; }

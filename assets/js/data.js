@@ -30,7 +30,7 @@ const DATA = {
   stats: [
     { icon: "instagram", theme: "t-instagram", value: "1.980",   href: "https://www.instagram.com/viniciosmuniz_", label: "Instagram" },
     { icon: "github",    theme: "t-github",    value: "13 repos", href: "https://github.com/Viniciosmunuz",         label: "GitHub" },
-    { icon: "linkedin",  theme: "t-linkedin",  value: "100 conexões", href: "https://www.linkedin.com/in/vinicios-muniz-332370423/", label: "LinkedIn" },
+    { icon: "linkedin",  theme: "t-linkedin",  value: "100",          href: "https://www.linkedin.com/in/vinicios-muniz-332370423/", label: "LinkedIn" },
     { icon: "whatsapp",  theme: "t-whatsapp",  value: "Chamar",   href: "https://wa.me/qr/CFKI7EKZUH7EK1",              label: "WhatsApp" }
   ],
 

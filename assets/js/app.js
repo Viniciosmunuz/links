@@ -197,6 +197,39 @@
     });
   }
 
+  /* ---------------------------------------------------------
+     SETA DE SCROLL
+     Aparece só quando há conteúdo abaixo da dobra, e some no
+     primeiro scroll. A altura é reavaliada no load e no resize
+     porque o avatar entra depois e muda o tamanho da página.
+     --------------------------------------------------------- */
+  function initScrollHint() {
+    const hint = $("#scrollHint");
+    let dismissed = false;
+
+    const hasMore = () =>
+      document.documentElement.scrollHeight - window.innerHeight > 60;
+
+    const update = () => {
+      if (dismissed) return;
+      hint.classList.toggle("is-gone", !hasMore());
+    };
+
+    hint.addEventListener("click", () => {
+      window.scrollBy({ top: Math.round(window.innerHeight * 0.75), behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+      if (dismissed || window.scrollY <= 40) return;
+      dismissed = true;
+      hint.classList.add("is-gone");
+    }, { passive: true });
+
+    window.addEventListener("resize", update);
+    window.addEventListener("load", update);
+    update();
+  }
+
   let toastTimer;
   function toast(msg) {
     const t = $("#toast");
@@ -214,5 +247,6 @@
   renderLinks();
   initTheme();
   initReveal();
+  initScrollHint();
   $("#footerText").textContent = DATA.footer || "";
 })();
