@@ -158,15 +158,17 @@
   function initTheme() {
     const root = document.documentElement;
     const meta = document.querySelector('meta[name="theme-color"]');
+    const toggle = $("#themeToggle");
 
     const apply = (t) => {
       root.setAttribute("data-theme", t);
       localStorage.setItem("theme", t);
       if (meta) meta.setAttribute("content", t === "light" ? "#EEF1F6" : "#0B1220");
+      if (toggle) toggle.checked = t === "light";
     };
 
-    $("#themeToggle").addEventListener("click", () => {
-      apply(root.getAttribute("data-theme") === "light" ? "dark" : "light");
+    toggle.addEventListener("change", () => {
+      apply(toggle.checked ? "light" : "dark");
     });
 
     apply(root.getAttribute("data-theme") || "dark");

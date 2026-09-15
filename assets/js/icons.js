@@ -78,11 +78,28 @@ const ICONS = {
   </svg>`,
 
   scissors: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-    fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
-    <circle cx="6" cy="6" r="2.7"/>
-    <circle cx="6" cy="18" r="2.7"/>
-    <path d="M8.1 7.5 20 19.4"/>
-    <path d="M8.1 16.5 20 4.6"/>
+    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="6.1" cy="6.2" r="2.7"/>
+    <circle cx="6.1" cy="17.8" r="2.7"/>
+    <path d="M8.2 7.7 20 19.2M8.2 16.3 20 4.8"/>
+    <path d="m12.7 12 2.1 2.1" opacity=".55"/>
+  </svg>`,
+
+  car: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5 11 1.6-4.1A2 2 0 0 1 8.5 5.6h7a2 2 0 0 1 1.9 1.3L19 11"/>
+    <path d="M8 7.1h8l1.3 3.4H6.7L8 7.1Z" opacity=".55"/>
+    <path d="M3.5 11h17v5.5a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5V11Z"/>
+    <path d="M5.7 12.8h1.8M16.5 12.8h1.8"/>
+    <circle cx="7" cy="15.2" r="1.2"/><circle cx="17" cy="15.2" r="1.2"/>
+  </svg>`,
+
+  bot: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="7" width="16" height="12" rx="3"/>
+    <path d="M12 7V4M9 4h6"/><circle cx="12" cy="3" r=".8" fill="currentColor"/>
+    <circle cx="9" cy="12" r="1" fill="currentColor"/><circle cx="15" cy="12" r="1" fill="currentColor"/>
+    <path d="M8.5 16h7M6.5 10H4.2M19.8 10h-2.3"/>
   </svg>`,
 
   globe: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">

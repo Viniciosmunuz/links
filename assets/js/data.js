@@ -39,27 +39,26 @@ const DATA = {
      action: "copy" faz o card copiar o texto em vez de abrir link.   */
   links: [
     {
-      icon: "mail", theme: "t-email", span: 4,
+      icon: "mail", theme: "t-email", span: 6,
       title: "Email", sub: "jvinipmuniz@gmail.com",
       href: "mailto:jvinipmuniz@gmail.com",
       action: "copy", copy: "jvinipmuniz@gmail.com"
     },
     {
       // slot estreito: subtítulo curto, senão o texto é cortado
-      icon: "globe", theme: "t-light", span: 2,
-      title: "Portfólio", sub: "Meu site",
-      href: "https://viniciosmunuz.github.io"
+      icon: "scissors", theme: "t-light", span: 2,
+      title: "BarberFlow", sub: "Meu projeto",
+      href: "https://fullstackweek-barber-v2-smoky.vercel.app/"
     },
     {
-      icon: "github", theme: "t-github", span: 6,
-      title: "GitHub", sub: "@Viniciosmunuz",
-      href: "https://github.com/Viniciosmunuz",
-      badge: "Follow"
+      icon: "car", theme: "t-accent", span: 2,
+      title: "Auto Peças", sub: "Sistema em TypeScript",
+      href: "https://github.com/Viniciosmunuz/car-pecas-control"
     },
     {
-      icon: "linkedin", theme: "t-linkedin", span: 6,
-      title: "LinkedIn", sub: "Vamos nos conectar",
-      href: "https://www.linkedin.com/in/vinicios-muniz-332370423/"
+      icon: "bot", theme: "t-whatsapp", span: 2,
+      title: "Chatbot Papaleguas", sub: "Projeto de chatbot",
+      href: "https://github.com/Viniciosmunuz/botativopapaleguas"
     },
   ],
 
