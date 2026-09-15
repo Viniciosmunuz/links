@@ -30,6 +30,7 @@ const DATA = {
   stats: [
     { icon: "instagram", theme: "t-instagram", value: "1.980",   href: "https://www.instagram.com/viniciosmuniz_", label: "Instagram" },
     { icon: "github",    theme: "t-github",    value: "13 repos", href: "https://github.com/Viniciosmunuz",         label: "GitHub" },
+    { icon: "linkedin",  theme: "t-linkedin",  value: "100",      href: "https://www.linkedin.com/in/vinicios-muniz-332370423/", label: "LinkedIn" },
   ],
 
   /* ---------- LINKS (o grid bento) ----------
@@ -54,6 +55,11 @@ const DATA = {
       title: "GitHub", sub: "@Viniciosmunuz",
       href: "https://github.com/Viniciosmunuz",
       badge: "Follow"
+    },
+    {
+      icon: "linkedin", theme: "t-linkedin", span: 6,
+      title: "LinkedIn", sub: "Vamos nos conectar",
+      href: "https://www.linkedin.com/in/vinicios-muniz-332370423/"
     },
   ],
 
