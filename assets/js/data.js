@@ -46,19 +46,24 @@ const DATA = {
     },
     {
       // slot estreito: subtítulo curto, senão o texto é cortado
-      icon: "scissors", theme: "t-light", span: 2,
+      icon: "scissors", theme: "t-light", span: 3,
       title: "BarberFlow", sub: "Meu projeto",
       href: "https://fullstackweek-barber-v2-smoky.vercel.app/"
     },
     {
-      icon: "car", theme: "t-accent", span: 2,
+      icon: "car", theme: "t-accent", span: 3,
       title: "Auto Peças", sub: "Sistema em TypeScript",
       href: "https://github.com/Viniciosmunuz/car-pecas-control"
     },
     {
-      icon: "bot", theme: "t-whatsapp", span: 2,
+      icon: "bot", theme: "t-whatsapp", span: 3,
       title: "Chatbot Papaleguas", sub: "Projeto de chatbot",
       href: "https://github.com/Viniciosmunuz/botativopapaleguas"
+    },
+    {
+      icon: "menu", theme: "t-linkedin", span: 3,
+      title: "Menu Online", sub: "Projeto em construção",
+      href: "#"
     },
   ],
 

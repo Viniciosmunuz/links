@@ -92,7 +92,13 @@
   function renderLinks() {
     const wrap = $("#links");
 
-    (DATA.links || []).forEach((l) => {
+    (DATA.links || []).forEach((l, index) => {
+      if (index === 1) {
+        const divider = el("div", "link-divider");
+        divider.innerHTML = "<span>Projetos</span>";
+        wrap.appendChild(divider);
+      }
+
       const a = el("a", "link " + (l.theme || "t-github"));
       a.href = l.href || "#";
       a.dataset.span = String(l.span || 6);

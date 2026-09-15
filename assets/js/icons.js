@@ -102,6 +102,13 @@ const ICONS = {
     <path d="M8.5 16h7M6.5 10H4.2M19.8 10h-2.3"/>
   </svg>`,
 
+  menu: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 5.5h16v13H4z"/>
+    <path d="M7 9h10M7 12.5h7M7 16h4"/>
+    <circle cx="17" cy="16" r="1.4" fill="currentColor" stroke="none"/>
+  </svg>`,
+
   globe: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
     <circle cx="12" cy="12" r="9.4"/>
     <path d="M2.9 9.6h18.2M2.9 14.4h18.2"/>
